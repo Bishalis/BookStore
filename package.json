@@ -1,0 +1,27 @@
+{
+  "name": "mern-bookstore",
+  "version": "1.0.0",
+  "description": "A modern book management application built with MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd Backend && npm run dev",
+    "client": "cd Frontend && npm run dev",
+    "install-all": "npm install && cd Backend && npm install && cd ../Frontend && npm install",
+    "build": "cd Frontend && npm run build"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "books",
+    "management"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
