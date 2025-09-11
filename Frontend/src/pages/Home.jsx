@@ -50,7 +50,7 @@ const Home = () => {
   const handleDeleteBook = async (id) => {
     try {
       await axios.delete(`http://localhost:5555/books/${id}`);
-      enqueueSnackbar('Book deleted successfully', { variant: 'success' });
+      enqueueSnackbar('Book deleted successfully', { variant: 'error' });
       fetchBooks(); // Refresh the list
     } catch (error) {
       console.log(error);
