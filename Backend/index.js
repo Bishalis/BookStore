@@ -4,7 +4,7 @@ import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 dotenv.config();
 
 
@@ -32,7 +32,7 @@ app.get('/', (request, response) => {
 app.use('/books', booksRoute);
 
 mongoose
-  .connect(process.env.MONGO_DB_URL)
+  .connect(process.env.MONGO_DB_URL || 5000)
   .then(() => {
     console.log('App connected to database');
     app.listen(process.env.PORT, () => {
