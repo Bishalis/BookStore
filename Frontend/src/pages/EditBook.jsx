@@ -26,7 +26,7 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`http://localhost:3000/books/${id}`)
       .then((response) => {
         const book = response.data;
         setAuthor(book.author);
@@ -102,7 +102,7 @@ const EditBook = () => {
     formData.append('image', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:5555/books/upload-image', formData, {
+      const response = await axios.post('http://localhost:3000/books/upload-image', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -135,7 +135,7 @@ const EditBook = () => {
     
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`http://localhost:3000/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book updated successfully!', { variant: 'success' });

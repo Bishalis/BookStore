@@ -20,7 +20,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`http://localhost:3000/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
@@ -35,7 +35,7 @@ const ShowBook = () => {
   const handleDelete = async () => {
     if (window.confirm(`Are you sure you want to delete "${book.title}"?`)) {
       try {
-        await axios.delete(`http://localhost:5555/books/${id}`);
+        await axios.delete(`http://localhost:3000/books/${id}`);
         enqueueSnackbar('Book deleted successfully', { variant: 'success' });
         // Navigate back to home
         window.location.href = '/';

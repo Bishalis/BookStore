@@ -38,7 +38,7 @@ router.post('/upload-image', upload.single('image'), async (request, response) =
       return response.status(400).send({ message: 'No file uploaded' });
     }
     
-    const imageUrl = `http://localhost:5555/uploads/${request.file.filename}`;
+    const imageUrl = `http://localhost:3000/uploads/${request.file.filename}`;
     response.status(200).json({ 
       message: 'File uploaded successfully',
       imageUrl: imageUrl,
