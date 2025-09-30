@@ -34,7 +34,7 @@ const Home = () => {
   const fetchBooks = () => {
     setLoading(true);
     axios
-      .get('http://localhost:3000/books')
+      .get('http://3.27.5.126:3000/books')
       .then((response) => {
         setBooks(response.data.data);
         setFilteredBooks(response.data.data);
@@ -49,7 +49,7 @@ const Home = () => {
 
   const handleDeleteBook = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/books/${id}`);
+      await axios.delete(`http://3.27.5.126:3000/books/${id}`);
       enqueueSnackbar('Book deleted successfully', { variant: 'error' });
       fetchBooks(); // Refresh the list
     } catch (error) {

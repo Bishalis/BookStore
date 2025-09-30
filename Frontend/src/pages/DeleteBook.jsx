@@ -18,7 +18,7 @@ const DeleteBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:3000/books/${id}`)
+    axios.get(`http://3.27.5.126:3000/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
@@ -33,7 +33,7 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:3000/books/${id}`)
+      .delete(`http://3.27.5.126:3000/books/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book deleted successfully', { variant: 'success' });

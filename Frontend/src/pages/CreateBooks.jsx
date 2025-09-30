@@ -82,7 +82,7 @@ const CreateBooks = () => {
     formData.append('image', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:3000/books/upload-image', formData, {
+      const response = await axios.post('http://3.27.5.126:3000/books/upload-image', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -115,7 +115,7 @@ const CreateBooks = () => {
     
     setLoading(true);
     axios
-      .post('http://localhost:3000/books', data)
+      .post('http://3.27.5.126:3000/books', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book created successfully!', { variant: 'success' });

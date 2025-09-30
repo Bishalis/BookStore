@@ -32,7 +32,7 @@ app.get('/', (request, response) => {
 app.use('/books', booksRoute);
 
 mongoose
-  .connect(process.env.MONGO_DB_URL || 3000)
+  .connect(process.env.MONGO_DB_URL)
   .then(() => {
     console.log('App connected to database');
     app.listen(process.env.PORT, () => {
